@@ -30,3 +30,15 @@ nodemon index.js
 ### Database side
 For the database you only need to create a database named 'Profile' and within that database a collection 'users'.
 The only thing you need to do is then change the 'DbUsername' and 'DbPassword' into the right credentials to connect to your database.
+
+### Instagram token
+There is also a 'const InstaToken'. To get the right token to test this out on you need to follow the api steps of 'Instagram Basic Display API'
+Here is the link: [Instagram API Link](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
+
+If you got this set up you are going to follow [this](https://developers.facebook.com/docs/instagram-basic-display-api/guides/getting-access-tokens-and-permissions) guide to get your short lived token (works for 1 hour).
+
+After you got the short lived token follow [this](https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens) to get your long lived token (works for 60 days);
+
+This token then needs to be saved as the 'const InstaToken' in the 'index.js' file.
+
+After all this is done you should be set! 
