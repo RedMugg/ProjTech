@@ -71,7 +71,6 @@ const app = express();
         res.render('list', {data: instaPhotos})
     }
     async function onLikesDetail(req, res){
-        const collectionLiked = client.db("profile").collection("users");
         const findResult = await col.find({}).toArray();
         console.log(findResult);
         res.render('likesDetail', {data: findResult})
