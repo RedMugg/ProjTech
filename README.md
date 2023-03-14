@@ -25,7 +25,7 @@ npm install
 ```
 4. Run server
 ```console
-nodemon index.js
+node index.js
 ```
 ### Database side
 For the database you only need to create a database named 'Profile' and within that database a collection 'users'.
