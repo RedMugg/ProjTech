@@ -41,4 +41,8 @@ After you got the short lived token follow [this](https://developers.facebook.co
 
 This token then needs to be saved as the 'const InstaToken' in the 'index.js' file.
 
+### Playing safe (.env)
+To secure the tokens and database login credentials you should make a .env file with the stored credentials.
+Here is a guide to using .env files: [link](https://www.npmjs.com/package/dotenv)
+
 After all this is done you should be set! 
