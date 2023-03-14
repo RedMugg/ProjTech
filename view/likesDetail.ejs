@@ -8,12 +8,12 @@
 </a>
 <% for (var index = 0; index < data.length; index++) { %>
     <% if (data[index].url != null) { %>
-        <form action="/clicked" method="POST">
+        <form action="/clickedRemove" method="POST">
             <h2>
                 <img id="photo" src="<%= data[index].url%>">
                 <input type="hidden" value="<%= data[index].url%>" name="photoUrl">
                 </h2>
-                <button id="myRemove">Click me!</button>
+                <button id="myRemove">Remove Like</button>
         </form>
 <%  }
 } %>

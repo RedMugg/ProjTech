@@ -92,14 +92,20 @@ const app = express();
              },
              {upsert: true}
         )
+
+        res.render('list', {data: instaPhotos})
     });
 
-    app.post('/clickedRemove', (req, res) => {
+    app.post('/clickedRemove', async (req, res) => {
         const src = req.body.photoUrl;
 
         console.log(src);
         
-        col.remove( { url: { $gt: src } } )
+        await col.deleteOne( { url: src} )
+
+        const findResult = await col.find({}).toArray();
+        console.log(findResult);
+        res.render('likesDetail', {data: findResult})
     });
 
     
