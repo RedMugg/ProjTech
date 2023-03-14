@@ -1,0 +1,24 @@
+h1 {
+    color: white;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: beige;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.hidden {
+    visibility: hidden;
+    font-size: 1px;
+}
+
+.chosen {
+    border-width: 1em;
+    border-color: black;
+}

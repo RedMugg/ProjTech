@@ -1,0 +1,18 @@
+<%- include('head') -%>
+
+<!doctype html>
+<title>Photo's - PhotoMatch</title>
+<h1>Photo's</h1>
+<a href="/">
+    <h2>Home</h2>
+</a>
+<% for (var index = 0; index < data.length; index++) { %>
+        <form action="/clicked" method="POST">
+            <h2>
+                <img id="photo" src="<%= data[index].url%>">
+            </h2>
+        </form>
+<% } %>
+
+<%- include('footer') -%>
+

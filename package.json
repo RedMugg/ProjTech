@@ -1,17 +1,22 @@
 {
-  "name": "Fotomatch",
+  "name": "PhotoMatch",
   "version": "1.0.0",
-  "description": "JSON Package for the FotoMatch app",
+  "description": "",
   "main": "index.js",
   "author": "Stephan Kok (https://github.com/RedMugg)",
+  "start": "nodemon index.js",
   "repository": "https://github.com/RedMugg/ProjTech",
   "bugs": {
     "url": "https://github.com/RedMugg/ProjTech/issues"
   },
-  "license": "MIT",
-
+  "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "camelcase": "^7.0.1",
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "slug": "^8.2.2"
   }
 }
