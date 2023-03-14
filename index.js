@@ -77,6 +77,7 @@ const app = express();
     }
     
     // Handle liking system
+    // Add photo
     app.post('/clicked', (req, res) => {
         const src = req.body.photoUrl;
 
@@ -95,6 +96,7 @@ const app = express();
         res.render('list', {data: instaPhotos})
     });
 
+    // Remove Photo
     app.post('/clickedRemove', async (req, res) => {
         const src = req.body.photoUrl;
 
