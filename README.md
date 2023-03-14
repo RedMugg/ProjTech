@@ -9,6 +9,10 @@ I implemented the Instagram Basic Display API to get photo's from an instagram a
 
 
 ## How to install
+Make sure you have node.js installed on your system before you follow the next steps!
+<br>
+Install NodeJs [here](https://nodejs.org/en/download/)
+
 
 ### Serverside
 1. Copy the clone repository link
