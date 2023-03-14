@@ -6,10 +6,10 @@
   "author": "Stephan Kok (https://github.com/RedMugg)",
   "start": "nodemon index.js",
   "repository": "https://github.com/RedMugg/ProjTech",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/RedMugg/ProjTech/issues"
   },
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "camelcase": "^7.0.1",
