@@ -94,6 +94,14 @@ const app = express();
         )
     });
 
+    app.post('/clickedRemove', (req, res) => {
+        const src = req.body.photoUrl;
+
+        console.log(src);
+        
+        col.remove( { url: { $gt: src } } )
+    });
+
     
     app.use((req, res, next) => {
         res.status(404).render('not-found.ejs')
