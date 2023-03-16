@@ -34,7 +34,7 @@ async function connect() {
 connect();
 
 // Setup instagram API
-async function insta(){
+async function insta() {
     let resp;
     try {
         let instaAccessToken = InstaToken;
@@ -46,70 +46,70 @@ async function insta(){
         console.log(e);
     }
 
-    return(instaPhotos);
+    return (instaPhotos);
 }
 insta();
 
 
 // Handle Express functions
 const app = express();
-    app.use(express.static('static'))
-    app.use(express.urlencoded({extended: true}))
-    app.use(express.static('public'))
+app.use(express.static('static'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'))
 
-    app.set('view engine', 'ejs')
-    app.set('views', 'view')
+app.set('view engine', 'ejs')
+app.set('views', 'view')
 
-    app.get('/', onhome)
-    app.get('/likesDetail', onLikesDetail)
+app.get('/', onhome)
+app.get('/likesDetail', onLikesDetail)
 
-    
-    
-    app.listen(8000, () => { console.log('Server is Running')})
-    
-    async function onhome(req, res){
-        res.render('list', {data: instaPhotos})
-    }
-    async function onLikesDetail(req, res){
-        const findResult = await col.find({}).toArray();
-        console.log(findResult);
-        res.render('likesDetail', {data: findResult})
-    }
-    
-    // Handle liking system
-    // Add photo
-    app.post('/clicked', (req, res) => {
-        const src = req.body.photoUrl;
 
-        console.log(src);
-        
-        col.updateMany(
-            {
-              url : src
-            }, 
-             {
-              $setOnInsert: {url: src}
-             },
-             {upsert: true}
-        )
 
-        res.render('list', {data: instaPhotos})
-    });
+app.listen(8000, () => { console.log('Server is Running') })
 
-    // Remove Photo
-    app.post('/clickedRemove', async (req, res) => {
-        const src = req.body.photoUrl;
+async function onhome(req, res) {
+    res.render('list', { data: instaPhotos })
+}
+async function onLikesDetail(req, res) {
+    const findResult = await col.find({}).toArray();
+    console.log(findResult);
+    res.render('likesDetail', { data: findResult })
+}
 
-        console.log(src);
-        
-        await col.deleteOne( { url: src} )
+// Handle liking system
+// Add photo
+app.post('/clicked', (req, res) => {
+    const src = req.body.photoUrl;
 
-        const findResult = await col.find({}).toArray();
-        console.log(findResult);
-        res.render('likesDetail', {data: findResult})
-    });
+    console.log(src);
 
-    
-    app.use((req, res, next) => {
-        res.status(404).render('not-found.ejs')
-    })
+    col.updateMany(
+        {
+            url: src
+        },
+        {
+            $setOnInsert: { url: src }
+        },
+        { upsert: true }
+    )
+
+    res.render('list', { data: instaPhotos })
+});
+
+// Remove Photo
+app.post('/clickedRemove', async (req, res) => {
+    const src = req.body.photoUrl;
+
+    console.log(src);
+
+    await col.deleteOne({ url: src })
+
+    const findResult = await col.find({}).toArray();
+    console.log(findResult);
+    res.render('likesDetail', { data: findResult })
+});
+
+
+app.use((req, res, next) => {
+    res.status(404).render('not-found.ejs')
+})

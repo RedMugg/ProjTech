@@ -6,11 +6,117 @@ body {
     padding: 0;
     margin: 0;
     background-color: beige;
+    font-family: 'Kanit', sans-serif;
 }
 
-img {
+header {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    max-height: 100px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+header ul li{
+    
+}
+
+header ul li a button {
+    font-size: 2em;
+    border-style: none;
+    height: 100%;
+    background-color: white;
+    padding: 20px 2em 20px 2em;
+    font-weight: 100;
+    margin-left: 2px;
+}
+
+header ul li a button:hover {
+    background-color: rgb(184, 184, 184);
+}
+
+header h1 {
+    margin: 0 0 0 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postImg {
     width: 300px;
-    height: auto;
+    min-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+form {
+    box-shadow: 0px 5px 20px 1px rgb(143, 143, 128);
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0;
+    background-color: darkseagreen;
+    height: 300px;
+}
+
+form button {
+    align-self: center;
+    border-style: none;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    transform: translateY(450%);
+    font-size: 2em;
+    transition-duration: .3s;
+    box-shadow: 0px 0px 10px 1px rgb(109, 109, 109);
+    border-radius: 25px;
+    position: absolute;
+}
+
+form button:hover {
+    width: 50px;
+    height: 50px;
+    transform: translateY(445%);
+    transition-duration: .3s;
+    box-shadow: 0px 0px 7px 1px rgb(111, 111, 111);
+    border-radius: 25px;
+}
+
+form button:active {
+    width: 95px;
+    height: 95px;
+    transform: translateY(100%);
+    box-shadow: inset 0px 0px 7px 1px rgb(111, 111, 111);
+    transition-duration: .6s;
+    border-radius: 25px;
 }
 
 .hidden {
@@ -21,4 +127,17 @@ img {
 .chosen {
     border-width: 1em;
     border-color: black;
+}
+
+.container {
+    padding: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.likeImg {
+    width: 35px;
+    filter: invert();
+    transform: translateY(13%);
 }

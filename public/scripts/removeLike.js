@@ -16,5 +16,3 @@ button.addEventListener('click', function(e) {
       console.log(error);
     });
 });
-
-// Test

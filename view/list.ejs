@@ -2,22 +2,24 @@
 
 <!doctype html>
 <title>Photo's - PhotoMatch</title>
-<h1>Photo's</h1>
-<a href="/likesDetail">
-    <h2>Liked Photo's</h2>
-</a>
-<% for (var index = 0; index < data.length; index++) { %>
-    <% if (data[index].media_type === 'IMAGE' || data[index].media_type ==='CAROUSEL_ALBUM') { %>
-        <form action="/clicked" method="POST">
-            <h2>
-                <img id="photo" src="<%= data[index].media_url%>">
-                <input type="hidden" value="<%= data[index].media_url%>" name="photoUrl">
-            </h2>
-            <button id="myButton">Like</button>
-        </form>
-<%  }
-} %>
 
+<%- include('header') -%>
+
+<div class="container">
+
+    <% for (var index = 0; index < data.length; index++) { %>
+        <% if (data[index].media_type === 'IMAGE' || data[index].media_type ==='CAROUSEL_ALBUM') { %>
+            <form action="/clicked" method="POST">
+                    <img class="postImg" id="photo" src="<%= data[index].media_url%>">
+                    <input type="hidden" value="<%= data[index].media_url%>" name="photoUrl">
+                <button id="myButton">
+                    <img class="likeImg" src="/images/heart.png" alt="like heart">
+                </button>
+            </form>
+            <%  }
+        } %>
+</div>
+        
 <!-- Url saving spot -->
 <p id="urlSection" name="urlCurrent"></p>
 
