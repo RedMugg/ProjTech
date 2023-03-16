@@ -28,9 +28,7 @@ header ul {
     margin: 0;
 }
 
-header ul li{
-    
-}
+
 
 header ul li a button {
     font-size: 2em;
@@ -140,4 +138,9 @@ form button:active {
     width: 35px;
     filter: invert();
     transform: translateY(13%);
+}
+
+.recPhotographer {
+    text-align: center;
+    position: relative;
 }
