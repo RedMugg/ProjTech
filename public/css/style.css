@@ -7,13 +7,16 @@
     --background-color-secondary: rgb(0, 0, 0);
     --button-background-color: rgb(255, 255, 255);
     --button-back-color-hover: rgb(170, 170, 170);
+    --shadow-color:  rgb(109, 109, 109);
 }
 
 body {
+    font-family: 'Kanit', sans-serif;
+
     padding: 0;
     margin: 0;
+
     background-color: var(--background-color);
-    font-family: 'Kanit', sans-serif;
 }
 
 a {
@@ -31,8 +34,10 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background-color-secondary);
+
     max-height: 100px;
+
+    background-color: var(--background-color-secondary);
 }
 
 header ul {
@@ -40,18 +45,21 @@ header ul {
     flex-direction: row;
     list-style-type: none;
     justify-content: space-evenly;
+
     padding: 0;
     margin: 0;
 }
 
 header ul li a button {
-    font-size: 2em;
     border-style: none;
+
+    font-size: 2em;
     height: 100%;
-    background-color: var(--button-background-color);
-    padding: 20px 2em 20px 2em;
+    padding: 20px 60px 20px 60px;
     font-weight: 100;
     margin-left: 2px;
+
+    background-color: var(--button-background-color);
 }
 
 header ul li a button:hover {
@@ -60,16 +68,17 @@ header ul li a button:hover {
 
 header h1 {
     margin: 0;
-    margin-left: 1em;
+    margin-left: 20px;
 }
 
 
 /* Main styling */
 section {
-    padding: 35px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    padding: 35px;
 }
 
 h1 {
@@ -80,60 +89,69 @@ h1 {
 }
 
 form {
-    box-shadow: 0px 5px 20px 1px rgb(143, 143, 128);
-    width: 300px;
-    border-radius: 10px;
-    margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 0;
-    background-color: var(--background-color-secondary);
+
+    width: 300px;
     height: 300px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    padding: 0;
+
+    background-color: var(--background-color-secondary);
+    box-shadow: 0px 5px 20px 1px var(--shadow-color);
 }
 
 form button {
     position: absolute;
     align-self: center;
     border-style: none;
-    background-color: var(--button-background-color);
+
     width: 50px;
     height: 50px;
     font-size: 2em;
-    box-shadow: 0px 0px 10px 1px rgb(109, 109, 109);
     border-radius: 25px;
+
+    box-shadow: 0px 0px 10px 1px var(--shadow-color);
+    background-color: var(--button-background-color);
     
     transform: translateY(450%);
     transition-duration: .3s;
 }
 
 form button:hover {
+    box-shadow: 0px 0px 7px 1px var(--shadow-color);
+
     transform: translateY(445%);
     transition-duration: .3s;
-    box-shadow: 0px 0px 7px 1px rgb(111, 111, 111);
 }
 
 form button:active {
     width: 95px;
     height: 95px;
+
+    box-shadow: inset 0px 0px 7px 1px var(--shadow-color);
+
     transform: translateY(100%);
-    box-shadow: inset 0px 0px 7px 1px rgb(111, 111, 111);
     transition-duration: .6s;
 }
 
 .postImg {
+    object-fit: cover;
+
     width: 300px;
     min-height: 300px;
     border-radius: 10px;
-    object-fit: cover;
 }
 
 .likeImg {
     width: 35px;
+
     filter: invert();
+
     transform: translateY(13%);
 }
-
 
 /* Footer Styling */
 footer {
@@ -141,10 +159,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 0;
-    bottom: 0;
+
     width: 100%;
     height: 75px;
+    left: 0;
+    bottom: 0;
+
     background-color: var(--background-color-secondary);
     color: var(--text-color);
 }
