@@ -5,24 +5,24 @@
 
 <%- include('header') -%>
 
-<main>
+<div class="container">
 
-    <section>
-    <% for (var index=0; index < data.length; index++) { %>
-        <% if (data[index].media_type==='IMAGE' || data[index].media_type==='CAROUSEL_ALBUM' ) { %>
+    <% for (var index = 0; index < data.length; index++) { %>
+        <% if (data[index].media_type === 'IMAGE' || data[index].media_type ==='CAROUSEL_ALBUM') { %>
             <form action="/clicked" method="POST">
-                <img class="postImg" id="photo" src="<%= data[index].media_url%>">
-                <input type="hidden" value="<%= data[index].media_url%>" name="photoUrl">
-
+                    <img class="postImg" id="photo" src="<%= data[index].media_url%>">
+                    <input type="hidden" value="<%= data[index].media_url%>" name="photoUrl">
                 <button id="myButton">
                     <img class="likeImg" src="/images/heart.png" alt="like heart">
                 </button>
             </form>
-    <% } } %>
-    </section>
-    <!-- Url saving spot -->
-    <p id="urlSection" name="urlCurrent"></p>
-</main>
+            <%  }
+        } %>
+</div>
+        
+<!-- Url saving spot -->
+<p id="urlSection" name="urlCurrent"></p>
 
 <script src="/scripts/clickPhoto.js"></script>
 <%- include('footer') -%>
+

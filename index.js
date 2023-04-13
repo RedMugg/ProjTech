@@ -25,6 +25,7 @@ async function connect() {
         await client.connect(uri);
         console.log("Connection made");
         const findResult = await col.find({}).toArray();
+        console.log(findResult);
 
     } catch (err) {
         console.error(err);
@@ -40,6 +41,7 @@ async function insta() {
         resp = await axios.get('https://graph.instagram.com/me/media?fields=media_type,media_url,caption&access_token=' + (instaAccessToken));
         resp = resp.data;
         instaPhotos = resp.data;
+        console.log(resp);
     } catch (e) {
         console.log(e);
     }
@@ -78,6 +80,8 @@ async function onLikesDetail(req, res) {
 // Add photo
 app.post('/clicked', (req, res) => {
     const src = req.body.photoUrl;
+
+    console.log(src);
 
     col.updateMany(
         {
