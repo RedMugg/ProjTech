@@ -1,23 +1,27 @@
 <%- include('head') -%>
+<main>
 
-<!doctype html>
-<title>Likes - PhotoMatch</title>
-<%- include('header') -%>
-<h2 class="recPhotographer">Recommended Photographer: Stephan Kok</h2>
-<div class="container">
-     <% for (var index = 0; index < data.length; index++) { %>
-        <% if (data[index].url != null) { %>
-            <form action="/clickedRemove" method="POST">
-                <img class="postImg" id="photo" src="<%= data[index].url%>">
-                <input type="hidden" value="<%= data[index].url%>" name="photoUrl">
-                <button id="myRemove">
-                    <img class="likeImg" src="/images/heartDel.png" alt="delete like heart">
-                </button>
-            </form>
-        <%  }
-    } %>
-</div>
-            
+    <!doctype html>
+    <title>Likes - PhotoMatch</title>
+    <%- include('header') -%>
+    <h1>Recommended Photographer: Stephan Kok</h1>
+
+    <section>
+        <% for (var index = 0; index < data.length; index++) { %>
+            <% if (data[index].url != null) { %>
+                <form action="/clickedRemove" method="POST">
+                    <img class="postImg" id="photo" src="<%= data[index].url%>">
+                    <input type="hidden" value="<%= data[index].url%>" name="photoUrl">
+                    
+                    <button id="myRemove">
+                        <img class="likeImg" src="/images/heartDel.png" alt="delete like heart">
+                    </button>
+                </form>
+                <%  }
+            } %>
+    </section>
+</main>
+        
 <script src="/scripts/removeLike.js"></script>
 
 <%- include('footer') -%>
