@@ -1,12 +1,31 @@
-h1 {
-    color: white;
+/* Overall Styling */
+/* Set CSS custom properties */
+:root {
+    --text-color: rgb(255,255, 255);
+    --text-color-secondary: rgb(0, 0, 0);
+    --background-color: rgb(243, 233, 215);
+    --background-color-secondary: rgb(0, 0, 0);
+    --button-background-color: rgb(255, 255, 255);
+    --button-back-color-hover: rgb(170, 170, 170);
+    --shadow-color:  rgb(109, 109, 109);
 }
 
 body {
+    font-family: 'Kanit', sans-serif;
+
     padding: 0;
     margin: 0;
-    background-color: beige;
-    font-family: 'Kanit', sans-serif;
+
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header styling */
+header h1 {
+    color: var(--text-color);
 }
 
 header {
@@ -15,8 +34,10 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+
     max-height: 100px;
+
+    background-color: var(--background-color-secondary);
 }
 
 header ul {
@@ -24,123 +45,126 @@ header ul {
     flex-direction: row;
     list-style-type: none;
     justify-content: space-evenly;
+
     padding: 0;
     margin: 0;
 }
 
-
-
 header ul li a button {
-    font-size: 2em;
     border-style: none;
+
+    font-size: 2em;
     height: 100%;
-    background-color: white;
-    padding: 20px 2em 20px 2em;
+    padding: 20px 60px 20px 60px;
     font-weight: 100;
     margin-left: 2px;
+
+    background-color: var(--button-background-color);
 }
 
 header ul li a button:hover {
-    background-color: rgb(184, 184, 184);
+    background-color: var(--button-back-color-hover);
 }
 
 header h1 {
-    margin: 0 0 0 1em;
+    margin: 0;
+    margin-left: 20px;
 }
 
-a {
-    text-decoration: none;
-}
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 75px;
+/* Main styling */
+section {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    padding: 35px;
 }
 
-.postImg {
-    width: 300px;
-    min-height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
+h1 {
+    text-align: center;
+    position: relative;
+    
+    color: var(--text-color-secondary);
 }
 
 form {
-    box-shadow: 0px 5px 20px 1px rgb(143, 143, 128);
-    width: 300px;
-    border-radius: 10px;
-    margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 0;
-    background-color: darkseagreen;
+
+    width: 300px;
     height: 300px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    padding: 0;
+
+    background-color: var(--background-color-secondary);
+    box-shadow: 0px 5px 20px 1px var(--shadow-color);
 }
 
 form button {
+    position: absolute;
     align-self: center;
     border-style: none;
-    background-color: white;
+
     width: 50px;
     height: 50px;
-    transform: translateY(450%);
     font-size: 2em;
-    transition-duration: .3s;
-    box-shadow: 0px 0px 10px 1px rgb(109, 109, 109);
     border-radius: 25px;
-    position: absolute;
+
+    box-shadow: 0px 0px 10px 1px var(--shadow-color);
+    background-color: var(--button-background-color);
+    
+    transform: translateY(450%);
+    transition-duration: .3s;
 }
 
 form button:hover {
-    width: 50px;
-    height: 50px;
+    box-shadow: 0px 0px 7px 1px var(--shadow-color);
+
     transform: translateY(445%);
     transition-duration: .3s;
-    box-shadow: 0px 0px 7px 1px rgb(111, 111, 111);
-    border-radius: 25px;
 }
 
 form button:active {
     width: 95px;
     height: 95px;
+
+    box-shadow: inset 0px 0px 7px 1px var(--shadow-color);
+
     transform: translateY(100%);
-    box-shadow: inset 0px 0px 7px 1px rgb(111, 111, 111);
     transition-duration: .6s;
-    border-radius: 25px;
 }
 
-.hidden {
-    visibility: hidden;
-    font-size: 1px;
-}
+.postImg {
+    object-fit: cover;
 
-.chosen {
-    border-width: 1em;
-    border-color: black;
-}
-
-.container {
-    padding: 35px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    width: 300px;
+    min-height: 300px;
+    border-radius: 10px;
 }
 
 .likeImg {
     width: 35px;
+
     filter: invert();
+
     transform: translateY(13%);
 }
 
-.recPhotographer {
-    text-align: center;
-    position: relative;
+/* Footer Styling */
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 75px;
+    left: 0;
+    bottom: 0;
+
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
 }
